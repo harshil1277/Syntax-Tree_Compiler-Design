@@ -111,15 +111,15 @@ int main() {
 }
 ```
 #### Generated Tokens
-![Symbol Table](/Images/Generating%Tokens.png)
+![Symbol Table](/Images/Generating%%Tokens.png)
 
 #### Symbol Table
 
-![Symbol Table](/Symbol_table.png)
+![Symbol Table](/Images/symbol_table.png)
 
 #### Printing Parse Tree Post Order 
 
-![Symbol Table](/Images/Syntax_tree.png)
+![Symbol Table](/Images/syntax_tree.png)
 
 
 
