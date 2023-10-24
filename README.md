@@ -1,5 +1,10 @@
 # Syntax-Tree_Compiler-Design
 
+Team Members:
+
+- Harshil Kaneria - B21CS033
+- Amisha Kumari - B21CS007
+
 ## Frontend Phase of a C Compiler
 
 ### Using the Compiler
