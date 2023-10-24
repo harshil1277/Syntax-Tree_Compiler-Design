@@ -5,7 +5,17 @@
 ### Using the Compiler
 
 ```
-// code to execute written here
+// Open Linux Terminal
+// run command
+sudo apt-get install flex
+sudo apt-get install bison
+
+// Go to the directory having PA2.sh shell file
+// Add you C program in input.c file in the directory
+// Right Click and Click on "Open in Terminal"
+// Run the following command
+
+bash PA2.sh 
 ```
 
 ### What is LEX?
