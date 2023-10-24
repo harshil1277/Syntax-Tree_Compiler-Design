@@ -111,7 +111,7 @@ int main() {
 }
 ```
 #### Generated Tokens
-![Symbol Table](/Images/Generating%%Tokens.png)
+![Symbol Table](/Images/generating_tokens.png)
 
 #### Symbol Table
 
