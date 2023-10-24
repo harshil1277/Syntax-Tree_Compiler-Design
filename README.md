@@ -110,17 +110,17 @@ int main() {
     return 1;
 }
 ```
+#### Generated Tokens
+![Symbol Table](/Images/Generating%Tokens.png)
 
 #### Symbol Table
 
-![Symbol Table](// image path of output of symbol table)
+![Symbol Table](/Symbol_table.png)
 
-#### Printing Parse Tree Inorder 
+#### Printing Parse Tree Post Order 
 
-![Symbol Table](//image path of inorder output image)
+![Symbol Table](/Images/Syntax_tree.png)
 
-#### Visualising the Parse Tree 
 
-![Symbol Table](//image path of visualization)
 
 
