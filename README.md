@@ -43,7 +43,7 @@ YACC (Yet Another Compiler Compiler) is a tool used to generate a parser. It par
 
 ### Phases of the Compiler
 
-The final parser takes a C program with nested for loops or if-else blocks and performs lexical, syntax, and semantic analysis and then intermediate code generation. Let’s look at the implementation of each phase in detail:
+The final parser takes a C program with nested for loops or if-else blocks and performs lexical and syntax analysis. Let’s look at the implementation of each phase in detail:
 
 #### Lexer and Context-Free Grammar
 
@@ -105,9 +105,4 @@ int main() {
 
 ![Symbol Table](//image path of visualization)
 
-
-
-### Intermediate Code Generation
-
-![Symbol Table](/Images/icg.png)
 
