@@ -2,7 +2,6 @@
 #include "y.tab.h"
 int yylex();
 void comment(void);
-int yylineno = 1;
 %}
 
 %%
