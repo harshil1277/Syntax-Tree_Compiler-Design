@@ -29,16 +29,21 @@ YACC (Yet Another Compiler Compiler) is a tool used to generate a parser. It par
 
 #### Assumptions
 
-- All header files are of the format “^"#include"[ ]*<.+\.h>”.
-- The main function does not take any input parameters.
-- Numbers follow the format “[-]?{digit}+| [-]?{digit}+\.{digit}{1,6}”. Hence numbers of the type +123.45 are not permitted.
-- The variables can be of int, float, or char type. No arrays are permitted. 
-- The body of an if and else block is enclosed in parenthesis even if it is a single line.
-- The body of a for loop is enclosed in parenthesis, even if it is a single line.
-- For the sake of simplicity, the scope of all variables is considered the same. Hence, variables cannot be redeclared within loops or if-else blocks. 
-- ```printf``` statements take a single string as a parameter. No type checking is performed.
-- ```scanf``` statements take a string and &id as input. No type checking is performed.
-- The condition statement of an if statement and for statement is of the form “value relop value” where value can be a number or id. 
+- Program : contains some optional headers followed by a single main function which contains some statements. Both single line and multi-line comments are allowed.
+- Statements: consists of declarative, iterative, conditional, assignment and update statements along with two functions “printf” and “scanf” and a return and an empty (;) statement.
+- Data Types :- We are only allowing integer variables
+- Iterative Statements : consists of for loop and while loop
+- for loop :- We will be following default for loop syntax i.e, single declaration, single condition and single updation statement
+- Cannot skip { } even if only one statement inside the for block
+- while loop :- Cannot skip { } even if only one statement inside the while block
+- Updation statements : considers only incrementing and decrementing variables (++, +=, --, -=)
+- if else statements
+-- consists of if : requires { } even if only one statement
+-- else : requires { } even if only one statement
+-- else if statements are not allowed
+- Expressions : allowing only binary arithmetic operators [-, +, *, /], negation, multiple variables and constants.
+- Conditions : considering only single relational operators [<, <=, >, >=, ==, !=], negation(!), two operands (identifiers or constants).
+- We are using bottom up parser, Post Order Traversal of parse tree is printed.
 
 
 ### Phases of the Compiler
@@ -49,13 +54,9 @@ The final parser takes a C program with nested for loops or if-else blocks and p
 
 The first step was to code the lexer file to take the stream of characters from the input programs and identify the tokens defined with the help of regular expressions. Next, the yacc file was created, which contained the context-free grammar that accepts a complete C program constituting headers, main function, variable declarations, and initializations, nested for loops, if-else constructs, and expressions of the form of binary arithmetic and unary operations. At this stage, the parser will accept a program with the correct structure and throw a syntax error if the input program is not derived from the CFG.
 
-#### Lexical Analysis
-
-A struct was defined with the attributes id_name, data_type (int, float, char, etc.), type (keyword, identifier, constant, etc.), and line_no to generate a symbol table. The symbol table is an array of the above-defined struct. Whenever the program encounters a header, keyword, a constant or a variable declaration, the add function is called, which takes the type of the symbol as a parameter. In the add function, we first check if the element is already present in the symbol table. If it is not present, a new entry is created using the value of yytext as id_name, datatype from the global variable type in case of variables, type from the passed parameter, and line_no. After the CFG accepts the program, the symbol table is printed. 
-
 #### Syntax Analysis
 
-For the syntax analysis phase, a struct was declared that represented the node for the binary tree that is to be generated. The struct node has attributes left, right, and a token which is a character array. All the tokens are declared to be of type nam, a struct with attributes node and name, representing the token’s name. To generate the syntax tree, a node is created for each token and linked to the nodes of the tokens, which occur to its left and right semantically. The inorder traversal of the generated syntax tree should recreate the program logically. 
+We are directly printing post order traversal of Syntax Tree because we are doing bottom up parsing. We have included print statements for every grammer production so that post order can be printed.
 
 ### Example of the Compiler in Action
 
