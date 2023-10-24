@@ -10,6 +10,8 @@
 sudo apt-get install flex
 sudo apt-get install bison
 
+// Restart the terminal
+
 // Go to the directory having PA2.sh shell file
 // Add you C program in input.c file in the directory
 // Right Click and Click on "Open in Terminal"
